@@ -30,9 +30,35 @@
             
         </div>
 
-        <ul id="lista-tarefas" class="space-y-3">
-            </ul>
+        <ul id="lista-de-tarefas" class="space-y-3">
+    <li class="flex justify-between items-center p-3 
+               border border-gray-300 dark:border-zinc-500 rounded-lg shadow-sm 
+               cursor-pointer 
+               hover:shadow-lg dark:hover:shadow-2xl
+               transition duration-150 ease-in-out">
         
+        <span class="text-zinc-700 flex-grow">Tarefa 1</span>
+        
+        <div class="flex space-x-2">
+            <button>✏</button>
+            <button>🗑</button>
+        </div>
+    </li>
+</ul>
+        <hr class="my-6 border-zinc-700 dark:border-zinc-100">
+        <div class="flex-grow relative">
+            <input type="text"
+            id="pesquisa-input"
+            placeholder="🔍 Pesquise..."
+            class="w-2/3 p-3 border border-zinc-400 rounded-lg text-zinc-700 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+            <select name="" id="filtro-select"
+            class="p-3 border border-zinc-400 rounded-lg bg-white text-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500 ">
+            <option value="todas">Todos</option>
+            <option value="pendentes">Ativos</option>
+            <option value="concluidas">Concluídos</option>
+            </select>
+        </div>
     </main>
 
 </body>
