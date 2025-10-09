@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EsToDoList</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="flex justify-center items-start pt-12 min-h-screen bg-gray-100 dark:bg-zinc-800 text-zinc-700 dark:text-lime-100">
+    
+    <main class="w-full max-w-sm lg:max-w-lg p-6 bg-white dark:bg-zinc-600 border border-gray-300 dark:border-zinc-500 rounded-lg shadow-xl">
+        
+        <h1 class="text-3xl font-bold text-center mb-6 text-lime-600 dark:text-lime-400" style="font-family:'Comic Sans MS';">EsToDoList</h1>
+        
+        <div class="flex mb-6 space-x-2">
+            
+            <input
+                type="text"
+                id="nova-tarefa-input"
+                placeholder="digite uma tarefa..."
+                class="flex-grow p-3 border-gray-400 rounded-lg text-zinc-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lime-500 dark:bg-zinc-700 dark:text-lime-50 dark:border-zinc-500 dark:placeholder-zinc-400"
+            />
+            
+            <button 
+                id="adicionar-tarefa-btn"
+                class="flex-shrink-0 w-12 h-12 bg-lime-500 hover:bg-lime-600 text-white text-2xl font-bold rounded-lg transition duration-150 ease-in-out shadow-md flex items-center justify-center dark:bg-lime-600 dark:hover:bg-lime-700"
+                >+
+            </button>
+            
+        </div>
+
+        <ul id="lista-tarefas" class="space-y-3">
+            </ul>
+        
+    </main>
+
+</body>
+</html>

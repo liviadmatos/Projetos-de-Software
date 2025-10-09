@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstToDoList - Tailwind</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilo para simular um risco na tarefa concluída (opcional, mas comum) */
+        .task-completed .task-text {
+            text-decoration: line-through;
+            color: #9ca3af; /* gray-400 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-4 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
+<header class="bg-black flex  justify-center items-center"><h1 class="text-4xl font-extrabold text-center text-indigo-600 tracking-wider dark:text-cyan-400">
+            EsToDoList
+        </h1>
+    </header>
+    
+    
+    <main class="max-w-1/2 mx-auto mt-10 p-6 bg-white rounded-xl shadow-2xl dark:bg-gray-800 dark:shadow-none"> 
+        
+        
+
+        <div class="relative mb-6">
+            <input type="text" placeholder="Buscar tarefas..." class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:placeholder-gray-400">
+            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+
+        <div class="flex gap-2 mb-8">
+            <input type="text" id="new-task-input" placeholder="Digite uma nova tarefa..." class="flex-grow p-3 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out dark:bg-gray-700 dark:border-cyan-500 dark:text-gray-100 dark:placeholder-gray-400">
+            <button id="add-task-btn" class="bg-indigo-600 text-white p-3 rounded-lg hover:bg-indigo-700 transition duration-150 ease-in-out flex items-center justify-center shadow-md hover:shadow-lg dark:bg-cyan-600 dark:hover:bg-cyan-700">
+                <i class="fas fa-plus text-lg"></i>
+            </button>
+        </div>
+
+        <ul id="task-list" class="space-y-3">
+            
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 transition duration-150 ease-in-out dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600">
+                <div class="flex items-center space-x-3 flex-grow">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500 cursor-pointer">
+                    <span class="task-text text-gray-800 text-lg font-medium dark:text-gray-100">Tarefa 1 (Pendente)</span>
+                </div>
+                <div class="flex space-x-2">
+                    <button class="text-yellow-600 hover:text-yellow-700 transition duration-150 p-2 rounded-full hover:bg-yellow-100 dark:hover:bg-gray-600" title="Editar">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    <button class="text-red-500 hover:text-red-600 transition duration-150 p-2 rounded-full hover:bg-red-100 dark:hover:bg-gray-600" title="Excluir">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </li>
+
+            <li class="task-completed flex items-center justify-between p-4 bg-green-50 rounded-lg shadow-sm border border-green-200 dark:bg-green-800 dark:border-green-600">
+                <div class="flex items-center space-x-3 flex-grow">
+                    <input type="checkbox" checked class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500 cursor-pointer">
+                    <span class="task-text text-lg font-medium">Tarefa 2 (Concluída)</span> 
+                </div>
+                <div class="flex space-x-2">
+                    <button class="text-yellow-600 opacity-50 cursor-not-allowed p-2 rounded-full" disabled title="Editar">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    <button class="text-red-500 hover:text-red-600 transition duration-150 p-2 rounded-full hover:bg-red-100 dark:hover:bg-green-700" title="Excluir">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </li>
+
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-200 hover:bg-gray-100 transition duration-150 ease-in-out dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-600">
+                <div class="flex items-center space-x-3 flex-grow">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600 rounded focus:ring-indigo-500 cursor-pointer">
+                    <span class="task-text text-gray-800 text-lg font-medium dark:text-gray-100">Tarefa 3 (Importante)</span>
+                </div>
+                <div class="flex space-x-2">
+                    <button class="text-yellow-600 hover:text-yellow-700 transition duration-150 p-2 rounded-full hover:bg-yellow-100 dark:hover:bg-gray-600" title="Editar">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    <button class="text-red-500 hover:text-red-600 transition duration-150 p-2 rounded-full hover:bg-red-100 dark:hover:bg-gray-600" title="Excluir">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="border-t border-gray-200 my-8 dark:border-gray-700"></div>
+
+        <div class="flex justify-center space-x-4">
+            <button class="px-6 py-2 rounded-full bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 transition duration-150 ease-in-out dark:bg-cyan-600 dark:hover:bg-cyan-700">
+                Todas
+            </button>
+            <button class="px-6 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold shadow-sm hover:bg-gray-50 transition duration-150 ease-in-out dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600">
+                Concluídas
+            </button>
+            <button class="px-6 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold shadow-sm hover:bg-gray-50 transition duration-150 ease-in-out dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600">
+                Pendentes
+            </button>
+        </div>
+
+    </main>
+
+</body>
+</html>
